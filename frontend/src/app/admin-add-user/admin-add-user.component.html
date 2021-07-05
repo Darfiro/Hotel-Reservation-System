@@ -1,0 +1,20 @@
+<div class="cards-container">
+  <form [formGroup]="userForm">
+    <mat-form-field appearance='fill'>
+      <mat-label>Логин</mat-label>
+      <input matInput formControlName="login" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Пароль</mat-label>
+      <input matInput formControlName="password" type="password" autocomplete="off">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Роль</mat-label>
+      <mat-select formControlName='role'>
+        <mat-option value="ADMIN">Admin</mat-option>
+        <mat-option value="USER">User</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-flat-button color=primary (click)="submit()">Создать</button>
+  </form>
+</div>

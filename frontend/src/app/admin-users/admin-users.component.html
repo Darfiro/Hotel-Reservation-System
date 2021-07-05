@@ -1,0 +1,9 @@
+<div class="cards-container">
+  <mat-card *ngFor="let user of users">
+    <mat-card-content>
+      <p>Имя пользователя: {{ user.login }}</p>
+      <p>Роль пользователя: {{ user.role.toLocaleLowerCase() }}</p>
+    </mat-card-content>
+  </mat-card>
+  <button mat-flat-button color=primary routerLink='/admin/users/add'>Добавить пользователя</button>
+</div>

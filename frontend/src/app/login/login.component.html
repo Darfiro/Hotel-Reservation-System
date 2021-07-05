@@ -1,0 +1,11 @@
+<form [formGroup]='loginForm' (ngSubmit)="onSubmit()">
+  <mat-form-field appearance='fill'>
+    <mat-label>Логин</mat-label>
+    <input matInput formControlName='login' autocomplete="off">
+  </mat-form-field>
+  <mat-form-field appearance='fill'>
+    <mat-label>Пароль</mat-label>
+    <input matInput formControlName='password' type="password" autocomplete="off">
+  </mat-form-field>
+  <button mat-flat-button color=primary>Войти</button>
+</form>

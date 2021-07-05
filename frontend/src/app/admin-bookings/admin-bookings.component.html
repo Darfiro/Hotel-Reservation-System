@@ -1,0 +1,29 @@
+<div class="cards-container">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field appearance="fill">
+          <mat-label>Пользователь</mat-label>
+            <mat-select matInput formControlName="user" (selectionChange)="onUserChanged($event.value)">
+              <mat-option *ngFor="let user of users" [value]="user.userUid">
+                {{user.login}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </form>
+    </mat-card-content>         
+  </mat-card>
+  <mat-card *ngFor="let booking of bookings">
+    <mat-card-title>
+      {{ booking.hotelUid }}
+    </mat-card-title>
+    <mat-card-content>
+      <p>Дата заезда: {{ booking.dateIn }}</p>
+      <p>Дата отъезда: {{ booking.dateOut }}</p>
+      <p>Дата создания брони: {{ booking.dateReserved }}</p>
+      <p>Дата последнего обновления: {{ booking.dateReported }}</p>
+      <p>Номер комнаты: {{ booking.roomNumber }}</p>
+      <p>Статус: {{ booking.status }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

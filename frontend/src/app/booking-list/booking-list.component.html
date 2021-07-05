@@ -1,0 +1,19 @@
+<div class="cards-container">
+  <mat-card *ngFor="let reservation of data">
+    <mat-card-title>{{ reservation.hotelInfo.name }}</mat-card-title>
+    <mat-card-subtitle> {{ reservation.hotelInfo.location}} </mat-card-subtitle>
+    <mat-card-content>
+      <p> Номер комнаты: {{ reservation.bookingInfo.roomNumber}} </p>
+      <p> Дата заезда: {{ reservation.bookingInfo.bookingInterval.dateIn}} </p>
+      <p> Дата отъезда: {{ reservation.bookingInfo.bookingInterval.dateOut}} </p>
+      <p> Стоимость: {{ reservation.bookingInfo.price }} </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button [disabled]="reservation.bookingInfo.status != 'New'" color=primary
+        (click)="pay(reservation.bookingInfo.bookingUid)">Оплатить</button>
+      <button mat-flat-button
+        [disabled]="reservation.bookingInfo.status == 'Cancelled' || reservation.bookingInfo.status == 'Reversed'"
+        color=primary (click)="cancel(reservation.bookingInfo.bookingUid)">Отменить</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

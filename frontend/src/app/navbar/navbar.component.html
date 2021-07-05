@@ -1,0 +1,46 @@
+<mat-toolbar color=primary class="navbar">
+  <span class="logo">
+    HotelReservation
+  </span>
+
+  <div class="nav-items">
+    <ul>
+      <li><a routerLink="/search" class="nav-item">Поиск</a></li>
+      <li><a routerLink="/booking-list" class="nav-item">Брони</a></li>
+      <li><a routerLink="/loyalty" class="nav-item">Скидки</a></li>
+    </ul>
+
+    <button mat-mini-fab color [matMenuTriggerFor]="userMenu" color=secondary>
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+
+  <mat-menu #userMenu>
+    <button mat-menu-item routerLink='/login' *ngIf='!isLogedIn()'>
+      <mat-icon>login</mat-icon>
+      <span>Login</span>
+    </button>
+    <div *ngIf='isAdmin()'>
+      <button mat-menu-item routerLink='/admin/users'>
+        <mat-icon>settings</mat-icon>
+        <span>Пользователи</span>
+      </button>
+      <button mat-menu-item routerLink='/admin/add-hotel'>
+        <mat-icon>settings</mat-icon>
+        <span>Добавить отель</span>
+      </button>
+      <button mat-menu-item routerLink='/admin/bookings'>
+        <mat-icon>settings</mat-icon>
+        <span>Бронирования</span>
+      </button>
+      <button mat-menu-item routerLink='/admin/rooms-availability'>
+        <mat-icon>settings</mat-icon>
+        <span>Доступность комнат</span>
+      </button>
+    </div>
+    <button mat-menu-item (click)="logout()" *ngIf='isLogedIn()'>
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

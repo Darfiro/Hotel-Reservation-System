@@ -1,0 +1,21 @@
+<div class="cards-container">
+  <mat-card>
+    <mat-card-title>
+      Бронирование отеля: {{ hotel.name }}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      Адрес отеля: {{ hotel.location }}
+    </mat-card-subtitle>
+
+    <mat-card-content>
+      <p>Дата заезда: {{ dateFromString }}</p>
+      <p>Дата отъезда: {{ dateToString }}</p>
+      <p>Итоговая стоимость: {{ totalPrice }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color=primary (click)="book()">Забронировать</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

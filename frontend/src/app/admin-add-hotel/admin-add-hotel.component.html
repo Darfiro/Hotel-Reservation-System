@@ -1,0 +1,49 @@
+<div class="cards-container">
+  <form [formGroup]="hotelForm">
+    <mat-form-field appearance='fill'>
+      <mat-label>Название</mat-label>
+      <input matInput formControlName="name" required autocomplete="off">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Количество комнат</mat-label>
+      <input matInput formControlName="roomsNumber" required autocomplete="off" type="number">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Стоимость комнаты на 1</mat-label>
+      <input matInput formControlName="onePersonRoom" required autocomplete="off" type="number">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Стоимость комнаты на 2</mat-label>
+      <input matInput formControlName="twoPersonRoom" required autocomplete="off" type="number">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Стоимость комнаты на 3</mat-label>
+      <input matInput formControlName="threePersonRoom" required autocomplete="off" type="number">
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Стоимость комнаты на 4</mat-label>
+      <input matInput formControlName="fourPersonRoom" required autocomplete="off" type="number">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Страна</mat-label>
+      <mat-select matInput formControlName="country" (selectionChange)="onCountryChanged($event.value)">
+        <mat-option *ngFor="let country of countries" [value]="country.uid">
+          {{country.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Город</mat-label>
+      <mat-select matInput formControlName="city">
+        <mat-option *ngFor="let city of cities" [value]="city.uid">
+          {{city.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance='fill'>
+      <mat-label>Адрес</mat-label>
+      <input matInput formControlName="address" required autocomplete="off">
+    </mat-form-field>
+    <button mat-flat-button color=primary (click)="submit()">Добавить</button>
+  </form>
+</div>

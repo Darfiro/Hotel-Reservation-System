@@ -1,0 +1,44 @@
+.navbar {
+    justify-content: space-between;
+
+    .logo {
+        font-weight: 500;
+        font-style: italic;
+        font-size: 26px;
+        text-decoration: none;
+        color: white;
+    }
+
+    .nav-items {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item {
+        font-weight: 500;
+        font-style: italic;
+        font-size: 26px;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease 0s;
+        margin-left: 10px;
+    }
+
+    .nav-item:hover {
+        color: rgb(217, 220, 235);
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        
+        li {
+            padding: 15px;
+        }
+    }
+
+    button {
+        margin: 20px;
+        float: right;
+    }    
+}

@@ -1,0 +1,22 @@
+<div class="cards-container" color="primary">
+  <mat-card *ngFor="let hotel of hotels">
+    <mat-card-title>
+      {{ hotel.name }}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+      {{ hotel.location }}
+    </mat-card-subtitle>
+
+    <mat-card-content>
+      <p>Количество свобоных комнат: {{ hotel.numberRooms }}</p>
+      <p>Стоимость за ночь: {{ hotel.price }}</p>
+      <p *ngIf='discount != null'>Скидка составила {{ discount }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-flat-button color=primary (click)="onHotelSelected(hotel.hotelUid)">Забронировать</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

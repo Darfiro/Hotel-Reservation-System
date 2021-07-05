@@ -1,0 +1,15 @@
+.cards-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  mat-card {
+    width: 800px;
+    margin-top: 20px;
+    button {
+      margin-left: 10px;
+      float: right;
+    }
+  }
+}

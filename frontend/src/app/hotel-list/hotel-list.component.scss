@@ -1,0 +1,17 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 100%;
+
+  mat-card {
+    margin-top: 20px;
+    min-width: 800px;
+
+    button {
+      float: right;
+    }
+  }
+}

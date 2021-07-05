@@ -1,0 +1,109 @@
+version: '3.1'
+
+services:
+  front:
+    container_name: front
+    image: darfiro/front
+    build: ./frontend
+    ports:
+      - '4201:4200'
+  session:
+    container_name: session
+    image: darfiro/session
+    build: ./session-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-87-112-29.compute-1.amazonaws.com:5432/dom1bqa43ervc",
+        "spring.datasource.username": "fubonmhstsgtvw",
+        "spring.datasource.password": "0040babc408e11cbbb78444df367e02001abb14521dce47ef4d3aab4a14eddbe"
+        }'
+        
+  loyalty:
+    container_name: loyalty
+    image: darfiro/loyalty
+    build: ./loyalty-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-87-112-29.compute-1.amazonaws.com:5432/d7384mlh3qlemh",
+        "spring.datasource.username": "qhngjrayrnncff",
+        "spring.datasource.password": "63dfeb1f265cf82224e1ec0a662719cf924c87638b8b45d186eeb26623e05be2"
+        }'
+        
+  reports:
+    container_name: reports
+    image: darfiro/reports
+    build: ./report-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-87-112-29.compute-1.amazonaws.com:5432/d943hesis76suh",
+        "spring.datasource.username": "znkpbvwfwzxiqi",
+        "spring.datasource.password": "346adaa650a3a360db33a346f0b2800eac534fdf5eed03ac524f05f77e22d45b"
+        }'
+        
+  payment:
+    container_name: payment
+    image: darfiro/payment
+    build: ./payment-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-87-112-29.compute-1.amazonaws.com:5432/da3aa99huan8tl",
+        "spring.datasource.username": "xopzjxweknhvwy",
+        "spring.datasource.password": "09e43d33dfc4ff817f8aa075c2de468861b813249b0590da2ec90401ffd013be"
+        }'
+        
+  booking:
+    container_name: booking
+    image: darfiro/booking
+    build: ./booking-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-52-5-247-46.compute-1.amazonaws.com:5432/dbmb577htpvf7s",
+        "spring.datasource.username": "dsltbpwucqxipv",
+        "spring.datasource.password": "3a3760df3bb31bd6b862d58954fad277e1fe7b7b6ed5ba1680514f217e412617"
+        }'
+        
+  hotels:
+    container_name: hotels
+    image: darfiro/hotels
+    build: ./hotel-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-167-168-52.compute-1.amazonaws.com:5432/d86vf7sm47nupn",
+        "spring.datasource.username": "vlbajsnmmvrgdz",
+        "spring.datasource.password": "63e5ca32173bc7c5320a4e68e93dcf22b201ea2984fde08360b25949d87b1131"
+        }'
+        
+  gateway:
+    container_name: gateway
+    image: darfiro/gateway
+    build: ./gateway-service
+    restart: always
+    environment:
+      SPRING_APPLICATION_JSON: 
+        '{
+        "server.port": 80,
+        "spring.datasource.url": "jdbc:postgresql://ec2-54-164-22-242.compute-1.amazonaws.com:5432/d715luan1d9sf1",
+        "spring.datasource.username": "nhryhltqedohyr",
+        "spring.datasource.password": "4a7cc139b72879a95cccf15588d4c6560fe03108bae0e0aa314210945a9be702"
+        }'
+        
+    ports:
+      - 8080:80

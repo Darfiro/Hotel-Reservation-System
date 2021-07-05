@@ -1,0 +1,16 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  height: 100%;
+
+  mat-card {
+    min-width: 800px;
+
+    button {
+      float: right;
+    }
+  }
+}

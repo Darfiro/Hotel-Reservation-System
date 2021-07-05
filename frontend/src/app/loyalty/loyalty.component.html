@@ -1,0 +1,18 @@
+<div class="cards-container">
+  <mat-card *ngIf="loyalty != null">
+    <mat-card-title>
+      Скидка найдена
+    </mat-card-title>
+
+    <mat-card-content>
+      <p>Статус скидки: {{loyalty.status}}</p>
+      <p>Размер скидки составляет: {{ loyalty.discount }}%</p>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="loyalty == null">
+    <mat-card-title>
+      Скидка не найдена
+    </mat-card-title>
+  </mat-card>
+</div>
