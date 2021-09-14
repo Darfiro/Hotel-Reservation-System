@@ -1,4 +1,4 @@
-# HotelReservationSystem
+# Hotel Reservation System
 Course work for Distributed Data Processing
 
 ## Stack
